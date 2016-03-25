@@ -3,7 +3,7 @@ jdk:
   - oraclejdk8
 deploy:
   provider: releases
-  api_key: "f28d4fa1802e3c78dbe4e4ff4f9b26d5b3c6f41c"
+  api_key: "dd0527e0870f404114f3aff84df0bf04971640aa"
   file:
   - "frontend-gui/target/frontend.war"
   - "backend-gui/target/backend.war"
