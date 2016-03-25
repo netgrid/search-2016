@@ -14,3 +14,7 @@ hs_err_pid*
 # Buildtime working files
 backend-gui/target/
 frontend-gui/target/
+crawler/target/
+indexer/target/
+search-model/target/
+utils/target/
