@@ -1,6 +1,0 @@
-<aspectj>
-<aspects>
-<aspect name="it.netgrid.rest.aspects.VersionAspect"/>
-</aspects>
-</aspectj>
-
