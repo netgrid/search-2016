@@ -3,7 +3,7 @@ jdk:
   - oraclejdk8
 deploy:
   provider: releases
-  api_key: ${GH_TOKEN}
+  api_key: "$GH_TOKEN"
   file:
   - "frontend-gui/target/frontend.war"
   - "backend-gui/target/backend.war"
