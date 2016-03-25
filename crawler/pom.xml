@@ -1,0 +1,144 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>it.netgrid</groupId>
+		<artifactId>search</artifactId>
+		<version>0.0.1</version>
+	</parent>
+
+	<artifactId>search-crawler</artifactId>
+
+	<properties>
+		<version.java>1.8</version.java>
+		<version.aspectj>1.8.6</version.aspectj>
+		<path.main>it.netgrid.search.crawler.Main</path.main>
+		<final.name>crawler</final.name>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>it.netgrid</groupId>
+			<artifactId>search-model</artifactId>
+			<version>0.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+			<version>${version.aspectj}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>${version.aspectj}</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>${final.name}</finalName>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>test</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<source>${version.java}</source>
+					<target>${version.java}</target>
+					<forkMode>pertest</forkMode>
+					<argLine>-Xms512m -Xmx512m</argLine>
+					<testFailureIgnore>false</testFailureIgnore>
+					<skip>false</skip>
+					<!-- <argLine>-XX:-UseSplitVerifier</argLine> -->
+					<argLine>-javaagent:${user.home}/.m2/repository/org/aspectj/aspectjweaver/1.8.6/aspectjweaver-1.8.6.jar</argLine>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>aspectj-maven-plugin</artifactId>
+				<version>1.7</version>
+				<configuration>
+					<showWeaveInfo>true</showWeaveInfo>
+					<Xlint>ignore</Xlint>
+					<source>1.8</source>
+					<target>1.8</target>
+					<forceAjcCompile>true</forceAjcCompile>
+					<complianceLevel>1.8</complianceLevel>
+					<encoding>UTF-8</encoding>
+					<verbose>true</verbose>
+					<outxml>true</outxml>
+				</configuration>
+				<executions>
+					<execution>
+						<!-- IMPORTANT -->
+						<phase>process-sources</phase>
+						<goals>
+							<goal>compile</goal>
+							<goal>test-compile</goal>
+						</goals>
+					</execution>
+				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>org.aspectj</groupId>
+						<artifactId>aspectjtools</artifactId>
+						<version>${version.aspectj}</version>
+						<scope>compile</scope>
+					</dependency>
+				</dependencies>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<!-- <version>3.3</version> -->
+				<configuration>
+					<source>${version.java}</source>
+					<target>${version.java}</target>
+					<!-- IMPORTANT -->
+					<useIncrementalCompilation>false</useIncrementalCompilation>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<archive>
+						<index>true</index>
+						<manifest>
+							<addClasspath>true</addClasspath>
+						</manifest>
+						<manifestEntries>
+							<Manifest-version>1.0</Manifest-version>
+							<Main-Class>${path.main}</Main-Class>
+						</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>install</id>
+						<phase>install</phase>
+						<goals>
+							<goal>sources</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+		</plugins>
+	</build>
+</project>
