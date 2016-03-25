@@ -1,3 +1,14 @@
 language: java
 jdk:
   - oraclejdk8
+deploy:
+  provider: releases
+  api_key: "f28d4fa1802e3c78dbe4e4ff4f9b26d5b3c6f41c"
+  file:
+  - "frontend-gui/target/frontend.war"
+  - "backend-gui/target/backend.war"
+  - "crawler/target/crawler.jar"
+  - "indexer/target/indexer.jar"
+  skip_cleanup: true
+  on:
+    tags: true
