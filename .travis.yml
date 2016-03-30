@@ -9,6 +9,7 @@ deploy:
   - "backend-gui/target/backend.war"
   - "crawler/target/crawler.jar"
   - "indexer/target/indexer.jar"
+  - "spider/target/spider.jar"
   skip_cleanup: true
   on:
     tags: true
