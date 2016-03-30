@@ -11,5 +11,6 @@
   	<module>indexer</module>
   	<module>frontend-gui</module>
   	<module>utils</module>
+  	<module>spider</module>
   </modules>
 </project>
