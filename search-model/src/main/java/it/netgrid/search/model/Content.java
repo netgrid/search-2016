@@ -2,10 +2,13 @@ package it.netgrid.search.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 @Entity(name="contents")
 public class Content {
 
+	public static final String ID_FIELD_NAME="id";
 	public static final String STATE_CODE_FIELD_NAME="state_code"; 
 	public static final String MIME_FIELD_NAME="mime"; 
 	public static final String ENCODING_FIELD_NAME="encoding"; 
@@ -14,6 +17,11 @@ public class Content {
 	public static final String BODY_RAW_FIELD_NAME="body_raw"; 
 	public static final String CREATION_DATE_FIELD_NAME="state_code"; 
 	
+	@Id
+	@GeneratedValue
+	
+	@Column(name=ID_FIELD_NAME)
+	private long id; 
 	@Column(name=STATE_CODE_FIELD_NAME)
 	private String stateCode;
 	@Column(name=MIME_FIELD_NAME)
