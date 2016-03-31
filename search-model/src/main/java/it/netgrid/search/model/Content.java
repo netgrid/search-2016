@@ -1,20 +1,22 @@
 package it.netgrid.search.model;
 
 import java.util.Date;
+import java.math.BigDecimal;
+
 
 public class Content {
 
 	private String stateCode;
 	private String mime; 
 	private String encoding;
-	private Time timeResponse;
+	private BigDecimal timeResponse;
 	private String lenguage;
 	private String bodyRaw; 
 	private Date creationDate;
 	
 	public Content(){}
 	
-	public Content(String stateCode, String mime, String encoding, String timeResponse, String lenguage, String bodyRaw, String creationDate){
+	public Content(String stateCode, String mime, String encoding, BigDecimal timeResponse, String lenguage, String bodyRaw, Date creationDate){
 		this.stateCode = stateCode;
 		this.mime = mime;
 		this.encoding = encoding;
@@ -43,10 +45,10 @@ public class Content {
 	public void setEncoding(String encoding) {
 		this.encoding = encoding;
 	}
-	public String getTimeResponse() {
+	public BigDecimal getTimeResponse() {
 		return timeResponse;
 	}
-	public void setTimeResponse(String timeResponse) {
+	public void setTimeResponse(BigDecimal timeResponse) {
 		this.timeResponse = timeResponse;
 	}
 	public String getLenguage() {
@@ -61,13 +63,19 @@ public class Content {
 	public void setBodyRaw(String bodyRaw) {
 		this.bodyRaw = bodyRaw;
 	}
-	public String getCreationDate() {
+	public Date getCreationDate() {
 		return creationDate;
 	}
-	public void setCreationDate(String creationDate) {
+	public void setCreationDate(Date creationDate) {
 		this.creationDate = creationDate;
 	}
 	
 	
-	
-}
+
+public static void main(String [ ] args)
+{
+	long startTime = System.currentTimeMillis(); 
+	 
+	long endTime = System.currentTimeMillis(); 
+	System.out.println("Tempo = " + (endTime - startTime)/1000 + " sec"); 
+}}
