@@ -2,6 +2,7 @@ package it.netgrid.search.model;
 
 import java.util.Date;
 
+
 public class URL {
 
 	public String path;
