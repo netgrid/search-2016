@@ -1,23 +1,42 @@
 package it.netgrid.search.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+
+@Entity(name="contents")
 public class Content {
 
+	public static final String STATE_CODE_FIELD_NAME="state_code"; 
+	public static final String MIME_FIELD_NAME="mime"; 
+	public static final String ENCODING_FIELD_NAME="encoding"; 
+	public static final String TIME_RESPONSE_FIELD_NAME="time_response"; 
+	public static final String LANGUAGE_FIELD_NAME="language"; 
+	public static final String BODY_RAW_FIELD_NAME="body_raw"; 
+	public static final String CREATION_DATE_FIELD_NAME="state_code"; 
+	
+	@Column(name=STATE_CODE_FIELD_NAME)
 	private String stateCode;
+	@Column(name=MIME_FIELD_NAME)
 	private String mime; 
+	@Column(name=ENCODING_FIELD_NAME)
 	private String encoding;
+	@Column(name=TIME_RESPONSE_FIELD_NAME)
 	private String timeResponse;
-	private String lenguage;
+	@Column(name=LANGUAGE_FIELD_NAME)
+	private String language;
+	@Column(name=BODY_RAW_FIELD_NAME)
 	private String bodyRaw; 
+	@Column(name=CREATION_DATE_FIELD_NAME)
 	private String creationDate;
 	
 	public Content(){}
 	
-	public Content(String stateCode, String mime, String encoding, String timeResponse, String lenguage, String bodyRaw, String creationDate){
+	public Content(String stateCode, String mime, String encoding, String timeResponse, String language, String bodyRaw, String creationDate){
 		this.stateCode = stateCode;
 		this.mime = mime;
 		this.encoding = encoding;
 		this.timeResponse = timeResponse;
-		this.lenguage = lenguage;
+		this.language = language;
 		this.bodyRaw = bodyRaw ;
 		this.creationDate = creationDate;
 
@@ -48,10 +67,10 @@ public class Content {
 		this.timeResponse = timeResponse;
 	}
 	public String getLenguage() {
-		return lenguage;
+		return language;
 	}
-	public void setLenguage(String lenguage) {
-		this.lenguage = lenguage;
+	public void setLenguage(String language) {
+		this.language = language;
 	}
 	public String getBodyRaw() {
 		return bodyRaw;
