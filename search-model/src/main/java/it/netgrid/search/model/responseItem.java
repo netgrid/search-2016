@@ -1,5 +1,9 @@
 package it.netgrid.search.model;
 import java.util.*;
+
+
+
+
 public class responseItem {
 	
 	String url,title,bodyPatch;
