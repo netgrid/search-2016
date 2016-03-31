@@ -6,7 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity(name="contents")
-public class Content {
+public class Content { //classe content
 
 	public static final String ID_FIELD_NAME="cnt_id";
 	public static final String STATE_CODE_FIELD_NAME="cnt_state_code"; 
@@ -18,8 +18,7 @@ public class Content {
 	public static final String CREATION_DATE_FIELD_NAME="cnt_creation_date"; 
 	
 	@Id
-	@GeneratedValue
-	
+	@GeneratedValue	
 	@Column(name=ID_FIELD_NAME)
 	private long id; 
 	@Column(name=STATE_CODE_FIELD_NAME)
@@ -36,9 +35,6 @@ public class Content {
 	private String bodyRaw; 
 	@Column(name=CREATION_DATE_FIELD_NAME)
 	private String creationDate;
-	
-	
-	
 	
 	public Content(){}
 	
