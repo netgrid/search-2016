@@ -8,14 +8,14 @@ import javax.persistence.Id;
 @Entity(name="contents")
 public class Content {
 
-	public static final String ID_FIELD_NAME="id";
-	public static final String STATE_CODE_FIELD_NAME="state_code"; 
-	public static final String MIME_FIELD_NAME="mime"; 
-	public static final String ENCODING_FIELD_NAME="encoding"; 
-	public static final String TIME_RESPONSE_FIELD_NAME="time_response"; 
-	public static final String LANGUAGE_FIELD_NAME="language"; 
-	public static final String BODY_RAW_FIELD_NAME="body_raw"; 
-	public static final String CREATION_DATE_FIELD_NAME="state_code"; 
+	public static final String ID_FIELD_NAME="cwt_id";
+	public static final String STATE_CODE_FIELD_NAME="cwt_state_code"; 
+	public static final String MIME_FIELD_NAME="cwt_mime"; 
+	public static final String ENCODING_FIELD_NAME="cwt_encoding"; 
+	public static final String TIME_RESPONSE_FIELD_NAME="cwt_time_response"; 
+	public static final String LANGUAGE_FIELD_NAME="cwt_language"; 
+	public static final String BODY_RAW_FIELD_NAME="cwt_body_raw"; 
+	public static final String CREATION_DATE_FIELD_NAME="cwt_creation_date"; 
 	
 	@Id
 	@GeneratedValue
