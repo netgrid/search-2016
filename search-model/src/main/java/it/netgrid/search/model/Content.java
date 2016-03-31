@@ -66,6 +66,14 @@ public class Content {
 		this.creationDate = creationDate;
 	}
 	
+	public static void main(String [ ] args)
+	{
+
+		long startTime = System.currentTimeMillis(); 
+
+		long endTime = System.currentTimeMillis(); 
+		System.out.println("Tempo = " + (endTime - startTime)/1000 + " sec"); 
+	}
+	}
 	
-	
-}
+
