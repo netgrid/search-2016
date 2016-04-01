@@ -10,7 +10,7 @@ public class response {
 	
 	ResponseItem ri=new ResponseItem();
 	
-	public static final String ID_FIELD_NAME ="idResult";
+	public static final String ID_FIELD_NAME ="id";
 	public static final String QUERY_FIELD_NAME ="query";
 	public static final String TEMPO_QUERY_FIELD_NAME ="tempo_query";
 	public static final String RESULT_TOTAL_FIELD_NAME ="result_total";
@@ -18,7 +18,7 @@ public class response {
 	@Id
 	@GeneratedValue
 	@Column(name=ID_FIELD_NAME)
-	private String idResult;
+	private String id;
 	@Column(name=QUERY_FIELD_NAME)
 	private String query;
 	@Column(name=TEMPO_QUERY_FIELD_NAME)
@@ -28,19 +28,19 @@ public class response {
 	
 	public response(){}
 	
-	public response(String idResult, String query, double tempoQuery,int risultTotali){
-		this.idResult=idResult;
+	public response(String id, String query, double tempoQuery,int risultTotali){
+		this.id=id;
 		this.query=query;
 		this.tempoQuery=tempoQuery;
 		this.risultTotali=risultTotali;
 	}
 
-	public String getIdResult() {
-		return idResult;
+	public String getId() {
+		return id;
 	}
 
-	public void setIdResult(String idResult) {
-		this.idResult = idResult;
+	public void setId(String id){
+		this.id = id;
 	}
 
 	public String getQuery() {
