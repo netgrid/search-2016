@@ -14,11 +14,11 @@ public class ResponseItem {
 	
 	response r=new response();
 	
-	public static final String ID_FIELD_NAME="Id";
-	public static final String URL_CODE_FIELD_NAME = "Url_code";
-	public static final String TITLE_CODE_FIELD_NAME = "Title";
-	public static final String BODY_PATCH_CODE_FIELD_NAME = "Body_patch";
-	public static final String DATA_CODE_FIELD_NAME = "Data";
+	public static final String ID_FIELD_NAME="resp_item_Id";
+	public static final String URL_CODE_FIELD_NAME = "resp_item_Url_code";
+	public static final String TITLE_CODE_FIELD_NAME = "resp_item_Title";
+	public static final String BODY_PATCH_CODE_FIELD_NAME = "resp_item_Body_patch";
+	public static final String DATA_CODE_FIELD_NAME = "resp_item_Date";
 	
 
 	@Id
