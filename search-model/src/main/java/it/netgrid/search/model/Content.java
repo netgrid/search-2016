@@ -89,11 +89,11 @@ public class Content {
 		this.timeResponse = timeResponse;
 	}
 	
-	public String getLenguage() {
+	public String getLanguage() {
 		return language;
 	}
 	
-	public void setLenguage(String language) {
+	public void setLanguage(String language) {
 		this.language = language;
 	}
 	
