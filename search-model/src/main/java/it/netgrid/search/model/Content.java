@@ -1,5 +1,8 @@
 package it.netgrid.search.model;
 
+import java.math.BigDecimal;
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -28,17 +31,17 @@ public class Content { //classe content
 	@Column(name=ENCODING_FIELD_NAME)
 	private String encoding;
 	@Column(name=TIME_RESPONSE_FIELD_NAME)
-	private String timeResponse;
+	private BigDecimal timeResponse;
 	@Column(name=LANGUAGE_FIELD_NAME)
 	private String language;
 	@Column(name=BODY_RAW_FIELD_NAME)
 	private String bodyRaw; 
 	@Column(name=CREATION_DATE_FIELD_NAME)
-	private String creationDate;
+	private Date creationDate;
 	
 	public Content(){}
 	
-	public Content(String stateCode, String mime, String encoding, String timeResponse, String language, String bodyRaw, String creationDate){
+	public Content(String stateCode, String mime, String encoding, BigDecimal timeResponse, String language, String bodyRaw, Date creationDate){
 		this.stateCode = stateCode;
 		this.mime = mime;
 		this.encoding = encoding;
@@ -67,10 +70,10 @@ public class Content { //classe content
 	public void setEncoding(String encoding) {
 		this.encoding = encoding;
 	}
-	public String getTimeResponse() {
+	public BigDecimal getTimeResponse() {
 		return timeResponse;
 	}
-	public void setTimeResponse(String timeResponse) {
+	public void setTimeResponse(BigDecimal timeResponse) {
 		this.timeResponse = timeResponse;
 	}
 	public String getLenguage() {
@@ -85,10 +88,10 @@ public class Content { //classe content
 	public void setBodyRaw(String bodyRaw) {
 		this.bodyRaw = bodyRaw;
 	}
-	public String getCreationDate() {
+	public Date getCreationDate() {
 		return creationDate;
 	}
-	public void setCreationDate(String creationDate) {
+	public void setCreationDate(Date creationDate) {
 		this.creationDate = creationDate;
 	}
 	
