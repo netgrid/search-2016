@@ -3,65 +3,68 @@ package it.netgrid.search.model;
 public class Document {
 
 	
-		private String MimeType;
-		private int NParole;
-		private int NCaratteri;
-		private int NParoleTitolo;
-		private String Titolo;
+		private String mimeType;
+		private int nParole;
+		private int nCaratteri;
+		private int nParoleTitolo;
+		private String titolo;
 		private String body;
-		private int NLink;
+		private int nLink;
+		private Content content;
 		
+		
+	
 		public Document(){}
 		
-		public Document(String MimeType, int NParole, int NCaratteri, int NParoleTitolo, String titolo, String
-				body, int NLink){
-			this.MimeType=MimeType;
-			this.NParole=NParole;
-			this.NCaratteri=NCaratteri;
-			this.NParoleTitolo=NParoleTitolo;
-			this.Titolo=titolo;
+		public Document(String mimeType, int nParole, int nCaratteri, int nParoleTitolo, String titolo, String
+				body, int nLink){
+			this.mimeType=mimeType;
+			this.nParole=nParole;
+			this.nCaratteri=nCaratteri;
+			this.nParoleTitolo=nParoleTitolo;
+			this.titolo=titolo;
 			this.body=body;
-			this.NLink=NLink;
+			this.nLink=nLink;
 		}
 
 		public String getMimeType() {
-			return MimeType;
+			return mimeType;
 		}
 
 		public void setMimeType(String mimeType) {
-			MimeType = mimeType;
+			this.mimeType = mimeType;
 		}
 
-		public int getNParole() {
-			return NParole;
+		public int getnParole() {
+			return nParole;
 		}
 
-		public void setNParole(int nParole) {
-			NParole = nParole;
+		public void setnParole(int nParole) {
+			this.nParole = nParole;
 		}
 
-		public int getNCaratteri() {
-			return NCaratteri;
+		public int getnCaratteri() {
+			return nCaratteri;
 		}
 
-		public void setNCaratteri(int nCaratteri) {
-			NCaratteri = nCaratteri;
+		public void setnCaratteri(int nCaratteri) {
+			this.nCaratteri = nCaratteri;
 		}
 
-		public int getNParoleTitolo() {
-			return NParoleTitolo;
+		public int getnParoleTitolo() {
+			return nParoleTitolo;
 		}
 
-		public void setNParoleTitolo(int nParoleTitolo) {
-			NParoleTitolo = nParoleTitolo;
+		public void setnParoleTitolo(int nParoleTitolo) {
+			this.nParoleTitolo = nParoleTitolo;
 		}
 
 		public String getTitolo() {
-			return Titolo;
+			return titolo;
 		}
 
 		public void setTitolo(String titolo) {
-			Titolo = titolo;
+			this.titolo = titolo;
 		}
 
 		public String getBody() {
@@ -72,14 +75,22 @@ public class Document {
 			this.body = body;
 		}
 
-		public int getNLink() {
-			return NLink;
+		public int getnLink() {
+			return nLink;
 		}
 
-		public void setNLink(int nLink) {
-			NLink = nLink;
+		public void setnLink(int nLink) {
+			this.nLink = nLink;
 		}
-		
+
+		public Content getContent() {
+			return content;
+		}
+
+		public void setContent(Content content) {
+			this.content = content;
+		}
+
 		
 		
 }
