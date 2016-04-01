@@ -7,6 +7,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity(name="contents")
 public class Content { 
@@ -19,6 +21,8 @@ public class Content {
 	public static final String LANGUAGE_FIELD_NAME="cnt_language"; 
 	public static final String BODY_RAW_FIELD_NAME="cnt_body_raw"; 
 	public static final String CREATION_DATE_FIELD_NAME="cnt_creation_date"; 
+	
+	public static final String PARENT_CONTENT_FIELD_NAME="cnt_parent_content";
 	
 	@Id
 	@GeneratedValue	
@@ -38,6 +42,13 @@ public class Content {
 	private String bodyRaw; 
 	@Column(name=CREATION_DATE_FIELD_NAME)
 	private Date creationDate;
+	
+	
+	@OneToOne
+	@JoinColumn(name=PARENT_CONTENT_FIELD_NAME)
+	private Document document;
+	
+	
 	
 	public Content(){}
 	
