@@ -10,10 +10,10 @@ public class response {
 	
 	ResponseItem ri=new ResponseItem();
 	
-	public static final String ID_FIELD_NAME ="id";
-	public static final String QUERY_FIELD_NAME ="query";
-	public static final String TEMPO_QUERY_FIELD_NAME ="tempo_query";
-	public static final String RESULT_TOTAL_FIELD_NAME ="result_total";
+	public static final String ID_FIELD_NAME ="resp_id";
+	public static final String QUERY_FIELD_NAME ="resp_query";
+	public static final String TEMPO_QUERY_FIELD_NAME ="resp_tempo_query";
+	public static final String RESULT_TOTAL_FIELD_NAME ="resp_result_total";
 	
 	@Id
 	@GeneratedValue
