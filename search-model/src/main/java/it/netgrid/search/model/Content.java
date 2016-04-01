@@ -9,7 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity(name="contents")
-public class Content { //classe content
+public class Content { 
 
 	public static final String ID_FIELD_NAME="cnt_id";
 	public static final String STATE_CODE_FIELD_NAME="cnt_state_code"; 
