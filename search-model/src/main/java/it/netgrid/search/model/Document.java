@@ -1,19 +1,46 @@
 package it.netgrid.search.model;
 
-public class Document {
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
+public class Document {
 	
-		private String mimeType;
-		private int nParole;
+	public static final String NPAROLE_FIELD_NAME="nParole";
+	public static final String NCARATTERI_CODE_FIELD_NAME = "nCaratteri";
+	public static final String MIMETYPE_CODE_FIELD_NAME = "mimeType";
+	public static final String ENCODING_CODE_FIELD_NAME = "encoding";
+	public static final String NPAROLETITOLO_CODE_FIELD_NAME = "nParoleTitolo";
+	public static final String TITOLO_CODE_FIELD_NAME = "titolo";
+	public static final String BODY_FIELD_NAME = "body";
+	public static final String NLINK_DATE_FIELD_NAME = "nLink";
+	public static final String PARENT_CONTENT_FIELD_NAME="cnt_parent_content";
+	
+		@Id
+		@GeneratedValue
+		@Column(name=NPAROLE_FIELD_NAME)	
+			private int nParole;
+		@Column(name=NCARATTERI_CODE_FIELD_NAME)
 		private int nCaratteri;
-		private int nParoleTitolo;
-		private String titolo;
-		private String body;
-		private int nLink;
+		@Column(name=MIMETYPE_CODE_FIELD_NAME)
+		private String mimeType; 
+		@Column(name=NPAROLETITOLO_CODE_FIELD_NAME)
+			private int nParoleTitolo;
+		@Column(name=TITOLO_CODE_FIELD_NAME)
+			private String titolo;
+		@Column(name=BODY_FIELD_NAME)
+			private String body; 
+		@Column(name=NLINK_DATE_FIELD_NAME)
+			private int nLink;
+
+		
+
+		@OneToOne
+		@JoinColumn(name=PARENT_CONTENT_FIELD_NAME)
 		private Content content;
 		
-		
-	
 		public Document(){}
 		
 		public Document(String mimeType, int nParole, int nCaratteri, int nParoleTitolo, String titolo, String
