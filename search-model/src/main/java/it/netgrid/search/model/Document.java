@@ -11,31 +11,31 @@ import javax.persistence.OneToOne;
 @Entity(name="Document")
 public class Document {
 	
-	public static final String NPAROLE_FIELD_NAME="nParole";
-	public static final String NCARATTERI_CODE_FIELD_NAME = "nCaratteri";
-	public static final String MIMETYPE_CODE_FIELD_NAME = "mimeType";
-	public static final String ENCODING_CODE_FIELD_NAME = "encoding";
-	public static final String NPAROLETITOLO_CODE_FIELD_NAME = "nParoleTitolo";
-	public static final String TITOLO_CODE_FIELD_NAME = "titolo";
-	public static final String BODY_FIELD_NAME = "body";
-	public static final String NLINK_DATE_FIELD_NAME = "nLink";
-	public static final String PARENT_CONTENT_FIELD_NAME="cnt_parent_content";
+	public static final String NWORDS_FIELD_NAME="doc_nParole";
+	public static final String NCHARS_CODE_FIELD_NAME = "doc_nChars";
+	public static final String MIMETYPE_CODE_FIELD_NAME = "doc_mimeType";
+	public static final String ENCODING_CODE_FIELD_NAME = "doc_encoding";
+	public static final String NTITLEWORDS_CODE_FIELD_NAME = "doc_nTitleWords";
+	public static final String TITLE_CODE_FIELD_NAME = "doc_title";
+	public static final String BODY_FIELD_NAME = "doc_body";
+	public static final String NLINK_FIELD_NAME = "doc_nLink";
+	public static final String PARENT_CONTENT_FIELD_NAME="doc_parent_content";
 	
 		@Id
 		@GeneratedValue
-		@Column(name=NPAROLE_FIELD_NAME)	
-			private int nParole;
-		@Column(name=NCARATTERI_CODE_FIELD_NAME)
-		private int nCaratteri;
+		@Column(name=NWORDS_FIELD_NAME)	
+			private int nWords;
+		@Column(name=NCHARS_CODE_FIELD_NAME)
+		private int nChars;
 		@Column(name=MIMETYPE_CODE_FIELD_NAME)
 		private String mimeType; 
-		@Column(name=NPAROLETITOLO_CODE_FIELD_NAME)
-			private int nParoleTitolo;
-		@Column(name=TITOLO_CODE_FIELD_NAME)
-			private String titolo;
+		@Column(name=NTITLEWORDS_CODE_FIELD_NAME)
+			private int nTitleWords;
+		@Column(name=TITLE_CODE_FIELD_NAME)
+			private String title;
 		@Column(name=BODY_FIELD_NAME)
 			private String body; 
-		@Column(name=NLINK_DATE_FIELD_NAME)
+		@Column(name=NLINK_FIELD_NAME)
 			private int nLink;
 
 		
@@ -46,15 +46,33 @@ public class Document {
 		
 		public Document(){}
 		
-		public Document(String mimeType, int nParole, int nCaratteri, int nParoleTitolo, String titolo, String
+		public Document(String mimeType, int nWords, int nChars, int nTitleWords, String title, String
 				body, int nLink){
 			this.mimeType=mimeType;
-			this.nParole=nParole;
-			this.nCaratteri=nCaratteri;
-			this.nParoleTitolo=nParoleTitolo;
-			this.titolo=titolo;
+			this.nWords=nWords;
+			this.nChars=nChars;
+			this.nTitleWords=nTitleWords;
+			this.title=title;
 			this.body=body;
 			this.nLink=nLink;
+		}
+
+	
+
+		public int getnWords() {
+			return nWords;
+		}
+
+		public void setnWords(int nWords) {
+			this.nWords = nWords;
+		}
+
+		public int getnChars() {
+			return nChars;
+		}
+
+		public void setnChars(int nChars) {
+			this.nChars = nChars;
 		}
 
 		public String getMimeType() {
@@ -65,36 +83,20 @@ public class Document {
 			this.mimeType = mimeType;
 		}
 
-		public int getnParole() {
-			return nParole;
+		public int getnTitleWords() {
+			return nTitleWords;
 		}
 
-		public void setnParole(int nParole) {
-			this.nParole = nParole;
+		public void setnTitleWords(int nTitleWords) {
+			this.nTitleWords = nTitleWords;
 		}
 
-		public int getnCaratteri() {
-			return nCaratteri;
+		public String getTitle() {
+			return title;
 		}
 
-		public void setnCaratteri(int nCaratteri) {
-			this.nCaratteri = nCaratteri;
-		}
-
-		public int getnParoleTitolo() {
-			return nParoleTitolo;
-		}
-
-		public void setnParoleTitolo(int nParoleTitolo) {
-			this.nParoleTitolo = nParoleTitolo;
-		}
-
-		public String getTitolo() {
-			return titolo;
-		}
-
-		public void setTitolo(String titolo) {
-			this.titolo = titolo;
+		public void setTitle(String title) {
+			this.title = title;
 		}
 
 		public String getBody() {
