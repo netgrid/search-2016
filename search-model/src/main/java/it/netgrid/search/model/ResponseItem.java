@@ -9,10 +9,10 @@ import javax.persistence.Id;
 
 
 
-@Entity(name="ResponseItem")
+@Entity(name="responseItems")
 public class ResponseItem {
 	
-	response r=new response();
+	
 	
 	public static final String ID_FIELD_NAME="resp_item_Id";
 	public static final String URL_CODE_FIELD_NAME = "resp_item_Url_code";
@@ -32,15 +32,15 @@ public class ResponseItem {
 	@Column(name=BODY_PATCH_CODE_FIELD_NAME)
 	private String bodyPatch;
 	@Column(name=DATA_CODE_FIELD_NAME)
-	private  Date data;
+	private  Date date;
 	
 	public ResponseItem(){}
 	
-	public ResponseItem(String url,String title,String bodyPatch,Date data){
+	public ResponseItem(String url,String title,String bodyPatch,Date date){
 		this.url=url;
 		this.title=title;
 		this.bodyPatch=bodyPatch;
-		this.data=data;
+		this.date=date;
 	}
 
 	public long getId() {
@@ -75,12 +75,12 @@ public class ResponseItem {
 		this.bodyPatch = bodyPatch;
 	}
 
-	public Date getData() {
-		return data;
+	public Date getDate() {
+		return date;
 	}
 
-	public void setData(Date data) {
-		this.data = data;
+	public void setDate(Date date) {
+		this.date = date;
 	}
 	
 }
