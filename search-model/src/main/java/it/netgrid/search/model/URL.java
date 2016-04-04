@@ -14,7 +14,7 @@ import com.j256.ormlite.field.ForeignCollectionField;
 
 
 
-@Entity(name="ulrs")
+@Entity(name="urls")
 public class URL {
 	
 	public static final String ID_FIELD_NAME="url_id";
