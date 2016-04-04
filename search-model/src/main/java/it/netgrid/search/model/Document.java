@@ -8,17 +8,17 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 
-@Entity(name="Documents")
+@Entity(name="documents")
 public class Document {
 	
-	public static final String NWORDS_FIELD_NAME="doc_nWords";
-	public static final String NCHARS_CODE_FIELD_NAME = "doc_nChars";
-	public static final String MIMETYPE_CODE_FIELD_NAME = "doc_mime_Type";
+	public static final String NWORDS_FIELD_NAME="doc_n_words";
+	public static final String NCHARS_CODE_FIELD_NAME = "doc_n_chars";
+	public static final String MIMETYPE_CODE_FIELD_NAME = "doc_mime_type";
 	public static final String ENCODING_CODE_FIELD_NAME = "doc_encoding";
-	public static final String NTITLEWORDS_CODE_FIELD_NAME = "doc_nTitle_Words";
+	public static final String NTITLEWORDS_CODE_FIELD_NAME = "doc_n_title_words";
 	public static final String TITLE_CODE_FIELD_NAME = "doc_title";
 	public static final String BODY_FIELD_NAME = "doc_body";
-	public static final String NLINK_FIELD_NAME = "doc_nLink";
+	public static final String NLINK_FIELD_NAME = "doc_n_link";
 	public static final String PARENT_CONTENT_FIELD_NAME="doc_parent_content";
 	
 		@Id
