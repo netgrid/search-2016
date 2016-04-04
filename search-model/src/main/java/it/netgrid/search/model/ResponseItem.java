@@ -13,6 +13,8 @@ import javax.persistence.Id;
 public class ResponseItem {
 	
 	
+
+	
 	
 	public static final String ID_FIELD_NAME="resp_item_Id";
 	public static final String URL_CODE_FIELD_NAME = "resp_item_Url_code";
