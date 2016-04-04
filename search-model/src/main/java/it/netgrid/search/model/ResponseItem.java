@@ -9,18 +9,18 @@ import javax.persistence.Id;
 
 
 
-@Entity(name="responseItems")
+@Entity(name="response_items")
 public class ResponseItem {
 	
 	
 
 	
 	
-	public static final String ID_FIELD_NAME="resp_item_Id";
-	public static final String URL_CODE_FIELD_NAME = "resp_item_Url_code";
-	public static final String TITLE_CODE_FIELD_NAME = "resp_item_Title";
-	public static final String BODY_PATCH_CODE_FIELD_NAME = "resp_item_Body_patch";
-	public static final String DATA_CODE_FIELD_NAME = "resp_item_Date";
+	public static final String ID_FIELD_NAME="resp_item_id";
+	public static final String URL_CODE_FIELD_NAME = "resp_item_url_code";
+	public static final String TITLE_CODE_FIELD_NAME = "resp_item_title";
+	public static final String BODY_PATCH_CODE_FIELD_NAME = "resp_item_body_patch";
+	public static final String DATA_CODE_FIELD_NAME = "resp_item_date";
 	
 
 	@Id
