@@ -5,14 +5,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-@Entity(name="Response")
+@Entity(name="responses")
 public class response {
 	
 	ResponseItem ri=new ResponseItem();
 	
 	public static final String ID_FIELD_NAME ="resp_id";
 	public static final String QUERY_FIELD_NAME ="resp_query";
-	public static final String TEMPO_QUERY_FIELD_NAME ="resp_tempo_query";
+	public static final String TIME_QUERY_FIELD_NAME ="resp_time_query";
 	public static final String RESULT_TOTAL_FIELD_NAME ="resp_result_total";
 	
 	@Id
@@ -21,18 +21,18 @@ public class response {
 	private String id;
 	@Column(name=QUERY_FIELD_NAME)
 	private String query;
-	@Column(name=TEMPO_QUERY_FIELD_NAME)
-	private double tempoQuery;
+	@Column(name=TIME_QUERY_FIELD_NAME)
+	private double timeQuery;
 	@Column(name=RESULT_TOTAL_FIELD_NAME)
-	private int risultTotali;
+	private int risultTotal;
 	
 	public response(){}
 	
-	public response(String id, String query, double tempoQuery,int risultTotali){
+	public response(String id, String query, double timeQuery,int risultTotal){
 		this.id=id;
 		this.query=query;
-		this.tempoQuery=tempoQuery;
-		this.risultTotali=risultTotali;
+		this.timeQuery=timeQuery;
+		this.risultTotal=risultTotal;
 	}
 
 	public String getId() {
@@ -51,20 +51,20 @@ public class response {
 		this.query = query;
 	}
 
-	public double getTempoQuery() {
-		return tempoQuery;
+	public double getTimeQuery() {
+		return timeQuery;
 	}
 
-	public void setTempoQuery(double tempoQuery) {
-		this.tempoQuery = tempoQuery;
+	public void setTimeQuery(double timeQuery) {
+		this.timeQuery = timeQuery;
 	}
 
-	public int getRisultTotali() {
-		return risultTotali;
+	public int getRisultTotal() {
+		return risultTotal;
 	}
 
-	public void setRisultTotali(int risultTotali) {
-		this.risultTotali = risultTotali;
+	public void setRisultTotal(int risultTotal) {
+		this.risultTotal = risultTotal;
 	}
 	
 }
