@@ -8,14 +8,14 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 
-@Entity(name="Document")
+@Entity(name="Documents")
 public class Document {
 	
-	public static final String NWORDS_FIELD_NAME="doc_nParole";
+	public static final String NWORDS_FIELD_NAME="doc_nWords";
 	public static final String NCHARS_CODE_FIELD_NAME = "doc_nChars";
-	public static final String MIMETYPE_CODE_FIELD_NAME = "doc_mimeType";
+	public static final String MIMETYPE_CODE_FIELD_NAME = "doc_mime_Type";
 	public static final String ENCODING_CODE_FIELD_NAME = "doc_encoding";
-	public static final String NTITLEWORDS_CODE_FIELD_NAME = "doc_nTitleWords";
+	public static final String NTITLEWORDS_CODE_FIELD_NAME = "doc_nTitle_Words";
 	public static final String TITLE_CODE_FIELD_NAME = "doc_title";
 	public static final String BODY_FIELD_NAME = "doc_body";
 	public static final String NLINK_FIELD_NAME = "doc_nLink";
@@ -25,16 +25,22 @@ public class Document {
 		@GeneratedValue
 		@Column(name=NWORDS_FIELD_NAME)	
 			private int nWords;
+		
 		@Column(name=NCHARS_CODE_FIELD_NAME)
 		private int nChars;
+		
 		@Column(name=MIMETYPE_CODE_FIELD_NAME)
 		private String mimeType; 
+		
 		@Column(name=NTITLEWORDS_CODE_FIELD_NAME)
 			private int nTitleWords;
+		
 		@Column(name=TITLE_CODE_FIELD_NAME)
 			private String title;
+		
 		@Column(name=BODY_FIELD_NAME)
 			private String body; 
+		
 		@Column(name=NLINK_FIELD_NAME)
 			private int nLink;
 
