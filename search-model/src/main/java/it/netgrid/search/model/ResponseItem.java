@@ -12,7 +12,7 @@ import javax.persistence.Id;
 @Entity(name="ResponseItem")
 public class ResponseItem {
 	
-	response r=new response();
+	Response r=new Response();
 	
 	public static final String ID_FIELD_NAME="Id";
 	public static final String URL_CODE_FIELD_NAME = "Url_code";
