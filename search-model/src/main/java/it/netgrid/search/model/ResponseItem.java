@@ -19,6 +19,7 @@ public class ResponseItem {
 	public static final String TITLE_CODE_FIELD_NAME = "rsi_title";
 	public static final String BODY_PATCH_CODE_FIELD_NAME = "rsi_body_patch";
 	public static final String DATA_CODE_FIELD_NAME = "rsi_date";
+	public static final String RESPONSE_ID_FIELD_NAME = "rsi_rsp_id";
 	
 	@Id
 	@GeneratedValue
@@ -34,8 +35,8 @@ public class ResponseItem {
 	private  Date date;
 	
 	@ManyToOne
-	@JoinColumn()
-	private response response;
+	@JoinColumn(name=RESPONSE_ID_FIELD_NAME)
+	private Response response;
 	
 	public ResponseItem(){}
 	
@@ -85,5 +86,22 @@ public class ResponseItem {
 	public void setDate(Date date) {
 		this.date = date;
 	}
+
+	public String getBodyPatches() {
+		return bodyPatches;
+	}
+
+	public void setBodyPatches(String bodyPatches) {
+		this.bodyPatches = bodyPatches;
+	}
+
+	public Response getResponse() {
+		return response;
+	}
+
+	public void setResponse(Response response) {
+		this.response = response;
+	}
+	
 	
 }
