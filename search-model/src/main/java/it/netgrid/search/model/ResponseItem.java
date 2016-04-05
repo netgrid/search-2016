@@ -6,23 +6,20 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 
 
 @Entity(name="response_items")
 public class ResponseItem {
-	
-	
 
+	public static final String ID_FIELD_NAME="rsi_id";
+	public static final String URL_CODE_FIELD_NAME = "rsi_url_code";
+	public static final String TITLE_CODE_FIELD_NAME = "rsi_title";
+	public static final String BODY_PATCH_CODE_FIELD_NAME = "rsi_body_patch";
+	public static final String DATA_CODE_FIELD_NAME = "rsi_date";
 	
-	
-	public static final String ID_FIELD_NAME="resp_item_id";
-	public static final String URL_CODE_FIELD_NAME = "resp_item_url_code";
-	public static final String TITLE_CODE_FIELD_NAME = "resp_item_title";
-	public static final String BODY_PATCH_CODE_FIELD_NAME = "resp_item_body_patch";
-	public static final String DATA_CODE_FIELD_NAME = "resp_item_date";
-	
-
 	@Id
 	@GeneratedValue
 	@Column(name=ID_FIELD_NAME)	
@@ -32,16 +29,20 @@ public class ResponseItem {
 	@Column(name=TITLE_CODE_FIELD_NAME)
 	private String title;
 	@Column(name=BODY_PATCH_CODE_FIELD_NAME)
-	private String bodyPatch;
+	private String bodyPatches;
 	@Column(name=DATA_CODE_FIELD_NAME)
 	private  Date date;
+	
+	@ManyToOne
+	@JoinColumn()
+	private response response;
 	
 	public ResponseItem(){}
 	
 	public ResponseItem(String url,String title,String bodyPatch,Date date){
 		this.url=url;
 		this.title=title;
-		this.bodyPatch=bodyPatch;
+		this.bodyPatches=bodyPatch;
 		this.date=date;
 	}
 
@@ -70,11 +71,11 @@ public class ResponseItem {
 	}
 
 	public String getBodyPatch() {
-		return bodyPatch;
+		return bodyPatches;
 	}
 
 	public void setBodyPatch(String bodyPatch) {
-		this.bodyPatch = bodyPatch;
+		this.bodyPatches = bodyPatch;
 	}
 
 	public Date getDate() {
