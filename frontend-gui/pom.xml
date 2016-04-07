@@ -35,6 +35,12 @@
 	</repositories>
 
 	<dependencies>
+	
+		<dependency>
+			<groupId>it.netgrid</groupId>
+			<artifactId>search-model</artifactId>
+			<version>0.0.1</version>
+		</dependency>
 
 		<!-- Jersey 1.18.1 -->
 		<dependency>
